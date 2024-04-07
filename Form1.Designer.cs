@@ -46,6 +46,7 @@
             txt_Autor.Name = "txt_Autor";
             txt_Autor.Size = new Size(125, 27);
             txt_Autor.TabIndex = 0;
+            txt_Autor.Enter += txt_Autor_Enter;
             // 
             // btn_gerarCheckList
             // 

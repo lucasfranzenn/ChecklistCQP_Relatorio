@@ -69,11 +69,11 @@ namespace ChecklistCQPDOC
 
             lbl_dataAtual.Text = "";
 
-            for(int i=1; i<=CONST.Constantes.LINHAS; i++)
+            for (int i = 1; i <= CONST.Constantes.LINHAS; i++)
             {
                 string checkbox = "checkBox" + i;
                 string memo = "memo" + i;
-                
+
                 CheckBox cb = (CheckBox)tlp_checklist.Controls.Find(checkbox, true).FirstOrDefault();
                 TextBox txtBox = (TextBox)tlp_checklist.Controls.Find(memo, true).FirstOrDefault();
 
@@ -403,12 +403,17 @@ namespace ChecklistCQPDOC
 
 
 
-            txt_Autor.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txt_Autor.AutoCompleteMode = AutoCompleteMode.Append;
             txt_Autor.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txt_Autor.AutoCompleteCustomSource = autocomplete;
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            criarAutoComplete();
+        }
+
+        private void txt_Autor_Enter(object sender, EventArgs e)
         {
             criarAutoComplete();
         }
